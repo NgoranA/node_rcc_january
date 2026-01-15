@@ -1,0 +1,21 @@
+{
+  "name": "pckt",
+  "version": "0.0.1",
+  "description": "This is just something to demonstrate the creattion of packages",
+  "license": "ISC",
+  "author": "NgoranA",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard",
+    "lint-fix": "standard --fix",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "pino": "^10.1.0"
+  },
+  "devDependencies": {
+    "standard": "^17.1.2"
+  }
+}
