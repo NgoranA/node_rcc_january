@@ -2,7 +2,6 @@ import express from "express";
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
 
 
 app.use(express.json()); // middleware to parse JSON bodies
@@ -19,18 +18,22 @@ app.get("/about", (req, res) => {
 });
 app.get("/contact", (req, res) => {
   res.send("This is the contact page.");
+  res.send("index.html", { title: "hello" });
 });
 
 
+// NOTE: the last middle should always be the error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(err.status || 500).json({ error: err.message || "Internal Server Error" });
 });
 
+// some third party middleware to pay keen attention to as you build backend services with node.js 
+// Cors middleware to enable CORS which is important for cross origin requests
+// Helmet middleware to set various HTTP headers for security
+// Morgan middleware for logging HTTP requests
+// Winston middleware for advanced logging capabilities
+//
 
-app.listen(PORT, () => {
-  console.log(`Express server running at http://localhost:${PORT}/`);
-})
-
-
+export default app;
 

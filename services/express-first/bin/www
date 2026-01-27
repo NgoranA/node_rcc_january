@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+
+'use strict';
+
+import app from '../app.js';
+import http from 'node:http';
+
+const PORT = process.env.PORT || 3000;
+
+const server = http.createServer(app);
+
+server.listen(PORT, () => {
+  console.log(`Express server listening on port ${PORT}`);
+});
+
+
+
